@@ -90,7 +90,7 @@ curl https://docs.projectcalico.org/v3.8/manifests/calico.yaml > calico.yaml
 
 14. **Download kubeadm-config.yaml file - configuration for initializing the cluster.**
 ```
-curl https://raw.githubusercontent.com/rolinj/kubernetes-cluster-setup/master/kubeadm-config.yaml > kubeadm-config.yaml
+curl https://raw.githubusercontent.com/rolinj/setup-kubernetes-cluster/master/kubeadm-config.yaml > kubeadm-config.yaml
 ```
 
 15. **Pull images that will be needed for cluster setup.**

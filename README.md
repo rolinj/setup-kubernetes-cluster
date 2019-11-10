@@ -9,12 +9,12 @@ A complete setup guide for setting up a kubernetes cluster from scratch. Startin
 ### Kubernetes Cluster Setup Pre-requisites
 - **Spawn 3 VMs**. Easiest way is to use Vagrant.
   - Vagrant installation guide in [Installation Guide](https://www.vagrantup.com/intro/getting-started/install.html)
-  - Modify the default Vagrantfile with the contents of this sample [Vagrantfile](https://github.com/rolinj/kubernetes-cluster-setup/blob/master/Vagrantfile)
+  - Modify the default Vagrantfile with the contents of this sample [Vagrantfile](https://github.com/rolinj/setup-kubernetes-cluster/blob/master/Vagrantfile)
 
 ### Setting up the Kubernetes Cluster
 - Once you have prepared the needed VMs, you can follow below steps:
-  - [Configuring Master Node](https://github.com/rolinj/kubernetes-cluster-setup/blob/master/README-master.md)
-  - [Configuring Worker Node](https://github.com/rolinj/kubernetes-cluster-setup/blob/master/README-worker.md)
+  - [Configuring Master Node](https://github.com/rolinj/setup-kubernetes-cluster/blob/master/README-master.md)
+  - [Configuring Worker Node](https://github.com/rolinj/setup-kubernetes-cluster/blob/master/README-worker.md)
 
 ### Installed packages and versions details
 - CentOS 7
