@@ -1,0 +1,8 @@
+# Sample config
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+kubernetesVersion: 1.16.2
+controlPlaneEndpoint: "k8smaster:6443"  #<-- k8smaster is the master node's hostname
+networking:
+  podSubnet: 192.168.0.0/16             #<-- Range should be identical to what is stated on calico.yaml file. See step13 on master node setup.
+
