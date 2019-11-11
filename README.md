@@ -14,6 +14,7 @@ A complete setup guide for setting up a kubernetes cluster from scratch. Startin
 ### Setting up the Kubernetes Cluster
 - Once you have prepared the needed VMs, you can follow below steps:
   - [Configuring Master Node](https://github.com/rolinj/setup-kubernetes-cluster/blob/master/README-master.md)
+    - ![Master Setup](/images/master_setup.png)
   - [Configuring Worker Node](https://github.com/rolinj/setup-kubernetes-cluster/blob/master/README-worker.md)
 
 ### Installed packages and versions details
