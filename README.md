@@ -35,6 +35,10 @@ Once you have prepared the needed VMs, you can follow below steps:
     1. `kubectl get nodes -o wide` to check that worker node is **UP** and **READY** and is indeed **JOINED** to the cluster.
     2. `kubectl get pods --all-namespaces` to check that all pods are RUNNING including the new pods for the worker node.
 
+3. **Validating the Cluster**
+Create deployments and verify that they are running and have been assigned to the worker nodes of the cluster.
+![Validation](/images/validation.png)
+
 ### Installed packages and versions details
 - CentOS 7
 - Docker 18.9.9 `*Latest validated version as of writing.*`

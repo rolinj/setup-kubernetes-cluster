@@ -85,6 +85,7 @@ printf "\nRestarting kubelet.service...\n"
 systemctl restart kubelet
 echo "Restarted kubelet service successfully!"
 
-printf "\To complete the worker node joining to cluster, please perform the following: \n"
-printf "\n [1] Revert IP routing to default via systemctl restart network 2 times \n"
-printf "\n [2] Restart kubelet service via systemctl restart kubelet \n"
+printf "\nTo complete the worker node joining to cluster, please perform the following: \n"
+printf "\n [1] Go to Master Node and copy the `kubeadm join` command. You can copy it from the file generated upon initializing the cluster which is `kubeadm-init.out`  \n"
+printf "\n [2] Revert IP routing to default via systemctl restart network 2 times \n"
+printf "\n [3] Restart kubelet service via systemctl restart kubelet \n"
