@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 echo "Performing setup for kubernetes cluster."
 echo "Adding master and worker details to host file."
