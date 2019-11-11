@@ -109,9 +109,9 @@ printf "Applying calico settings...\n"
 kubectl apply -f calico.yaml
 echo "Applied calico settings successfully!"
 
-printf "Reverting routing to default setting...\n"
+printf "\nReverting routing to default setting...\n"
 systemctl restart network
 systemctl restart network
 echo "Reverted routing settings to default successfully!"
 
-printf "\nKubernetes Cluster setup complete!"
+printf "\nKubernetes Cluster setup complete!\n"
