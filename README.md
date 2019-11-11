@@ -14,23 +14,26 @@ A complete setup guide for setting up a kubernetes cluster from scratch. Startin
 
 
 ### Setting up the Kubernetes Cluster
-- Once you have prepared the needed VMs, you can follow below steps:
-  1. From the master node, download the [master setup script](https://raw.githubusercontent.com/rolinj/setup-kubernetes-cluster/master/kubernetes-worker-setup.sh) and modify permission with `chmod 755 <script_name>`.
-    - **Notice that we have to supply an argument, which is the Gateway IP of our eth1 interface.**
-    - ![Master Setup](/images/master_setup.png)
-    - To verify status, run below commands: 
-        1. `kubectl get nodes -o wide` to check that master node is UP and READY.
-        2. `kubectl get pods --all-namespaces` to check that all pods are RUNNING.
+Once you have prepared the needed VMs, you can follow below steps:
+1. **From the master node**, download the [master setup script](https://raw.githubusercontent.com/rolinj/setup-kubernetes-cluster/master/kubernetes-worker-setup.sh) and modify permission with `chmod 755 <script_name>`.
+- **Notice that we have to supply an argument, which is the Gateway IP of our eth1 interface.**
+- ![Master Setup](/images/master_setup.png)
+- To verify status, run below commands: 
+    1. `kubectl get nodes -o wide` to check that master node is UP and READY.
+    2. `kubectl get pods --all-namespaces` to check that all pods are RUNNING.
 
-  2. From the worker node, download the [worker setup script](https://raw.githubusercontent.com/rolinj/setup-kubernetes-cluster/master/kubernetes-worker-setup.sh) and modify permission with `chmod 755 <script_name>`.
-    - **Notice that we have to supply 3 arguments in order.**
-        1. Hostname of the master node
-        2. IP address of the mater node
-        3. Gateway IP of the eth1 interface
-    - ![Worker Setup](/images/worker_setup.png)
-    - To verify status, run below commands **FROM Master Node**: 
-        1. `kubectl get nodes -o wide` to check that worker node is **UP** and **READY** and is indeed **JOINED** to the cluster.
-        2. `kubectl get pods --all-namespaces` to check that all pods are RUNNING including the new pods for the worker node.
+2. **From the worker node**, download the [worker setup script](https://raw.githubusercontent.com/rolinj/setup-kubernetes-cluster/master/kubernetes-worker-setup.sh) and modify permission with `chmod 755 <script_name>`.
+- **Notice that we have to supply 3 arguments in order.**
+    1. Hostname of the master node
+    2. IP address of the mater node
+    3. Gateway IP of the eth1 interface
+- ![Worker Setup](/images/worker_setup.png)
+- **Not yet done!** We have to run the `kubeadm join` command to make the worker node join the cluster.
+    - From the master node, execute `cat kubeadm-init.out` and copy the kubeadm join command from the last line of the output.
+    - Once the command is copied, execute the command to our worker node.
+- To verify status, run below commands **FROM Master Node**: 
+    1. `kubectl get nodes -o wide` to check that worker node is **UP** and **READY** and is indeed **JOINED** to the cluster.
+    2. `kubectl get pods --all-namespaces` to check that all pods are RUNNING including the new pods for the worker node.
 
 ### Installed packages and versions details
 - CentOS 7
