@@ -78,6 +78,6 @@ echo "Pulled necessary images successfully!"
 echo "Setting default routing to our private network..."
 yum -y install net-tools
 route del default
-route add default ${ETH1_GATEWAY} eth1
+route add default gw ${ETH1_GATEWAY} eth1
 echo "Updated default interface and gateway successfully!"
 ip route
