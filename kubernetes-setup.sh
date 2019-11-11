@@ -81,3 +81,7 @@ modprobe br_netfilter
 echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables 
 echo '1' > /proc/sys/net/ipv4/ip_forward
 echo "Iptables updated successfully!"
+
+echo "Restarting kubelet.service..."
+systemctl restart kubelet
+echo "Restarted kubelet service successfully!"
