@@ -29,13 +29,6 @@ setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 echo "SELinux disabled successfully!"
 
-echo "Ensuring traffic will not be block by iptables..."
-# Ensure traffic is route correctly and not blocked by iptables.
-modprobe br_netfilter
-echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables 
-echo '1' > /proc/sys/net/ipv4/ip_forward
-echo "Iptables updated successfully!"
-
 echo "Disabling swap for kubelet to work properly..."
 # Disabling swap for the kubelet to work properly.
 swapoff -a
@@ -81,3 +74,10 @@ route del default
 route add default gw ${ETH1_GATEWAY} eth1
 echo "Updated default interface and gateway successfully!"
 ip route
+
+echo "Ensuring traffic will not be block by iptables..."
+# Ensure traffic is route correctly and not blocked by iptables.
+modprobe br_netfilter
+echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables 
+echo '1' > /proc/sys/net/ipv4/ip_forward
+echo "Iptables updated successfully!"
