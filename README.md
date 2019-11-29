@@ -47,4 +47,6 @@ Create deployments and verify that they are running and have been assigned to th
 - Kubectl 1.16.2
 - Calico 3.8
 - VirtualBox 6.0.12
+- Metrics-server
+- Kubernetes-dashboard
 
