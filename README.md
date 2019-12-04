@@ -49,4 +49,5 @@ Create deployments and verify that they are running and have been assigned to th
 - VirtualBox 6.0.12
 - Metrics-server
 - Kubernetes-dashboard
+- HA-Proxy 1.5.18
 
