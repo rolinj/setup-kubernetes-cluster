@@ -16,7 +16,7 @@ A complete setup guide for setting up a kubernetes cluster from scratch. Startin
 
 ### Setting up the Kubernetes Cluster
 Once you have prepared the needed VMs, you can follow below steps:
-1. **From the master node**, download the [master setup script](https://raw.githubusercontent.com/rolinj/setup-kubernetes-cluster/master/kubernetes-worker-setup.sh) and modify permission with `chmod 755 <script_name>`.
+1. **From the master node**, download the [master setup script](https://raw.githubusercontent.com/rolinj/setup-kubernetes-cluster/master/kubernetes-master-setup.sh) and modify permission with `chmod 755 <script_name>`.
 - **Notice that we have to supply an argument, which is the Gateway IP of our eth1 interface.**
 ![Master Setup](/images/master_setup.png)
 - To verify status, run below commands: 
