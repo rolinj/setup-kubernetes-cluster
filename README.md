@@ -63,22 +63,22 @@ Once you have prepared the needed VMs, you can follow below steps:
     1. `kubectl get nodes -o wide` to check that master node is UP and READY.
     2. `kubectl get pods --all-namespaces` to check that all pods are RUNNING.
     
-3. **Validating the Cluster**
+4. **Validating the Cluster**
 Create deployments and verify that they are running and have been assigned to the worker nodes of the cluster.
 ![Validation](/images/validation.png)
 
 ### Installed packages and versions details
 
-| Package Name         | Version                                          |
-|----------------------|--------------------------------------------------|
-| CentOS               | 7                                                |
-| Docker               | 18.9.9 *Latest validated version as of writing.* |
-| Kubeadm              | 1.16.2                                           |
-| Kubelet              | 1.16.2                                           |
-| Kubectl              | 1.16.2                                           |
-| Calico               | 3.8                                              |
-| Virtual Box          | 6.0.12                                           |
-| metrics-server       | TBD                                              |
-| Kubernetes-dashboard | TBD                                              |
-| HA-Proxy             | 1.5.18                                           |
+                    | Package Name         | Version                                          |
+                    |----------------------|--------------------------------------------------|
+                    | CentOS               | 7                                                |
+                    | Docker               | 18.9.9 *Latest validated version as of writing.* |
+                    | Kubeadm              | 1.16.2                                           |
+                    | Kubelet              | 1.16.2                                           |
+                    | Kubectl              | 1.16.2                                           |
+                    | Calico               | 3.8                                              |
+                    | Virtual Box          | 6.0.12                                           |
+                    | metrics-server       | TBD                                              |
+                    | Kubernetes-dashboard | TBD                                              |
+                    | HA-Proxy             | 1.5.18                                           |
 
