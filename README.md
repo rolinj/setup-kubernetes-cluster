@@ -43,19 +43,19 @@ Once you have prepared the needed VMs, you can follow below steps:
 
 -  **Make sure to do this steps in joining the additional master node on the control plane** -
 
-Complete the setp up by joining the cluster using --control-plane tag like ff sample command...
+   Complete the setp up by joining the cluster using --control-plane tag like ff sample command...
 
    `kubeadm join <your_master_node>:6443 --token iooi7w.bb0oos74heefvnie \
    --discovery-token-ca-cert-hash sha256:caeb991ed48810de91005f00f25d8e470dc60324dbe5bc44812beb22f8a93a21 \
    --control-plane --certificate-key b4b4f6d276ffddc0c457795cc4539b747cd04d0e6c9929794b3d7b52612cc946`
 
-Then this command to do cluster commands like kubectl etc...
+   Then this command to do cluster commands like kubectl etc...
    
    `mkdir -p $HOME/.kube
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config`
 
-After joining make sure to run the following command twice (2) to reset your network routing...
+   After joining make sure to run the following command twice (2) to reset your network routing...
 
   ` systemctl restart network`
 
