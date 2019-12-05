@@ -70,6 +70,11 @@ echo "Downloaded kubeadm-config successfully!"
 
 printf "\nPulling images that will be need by the cluster...\n"
 kubeadm config images pull
+docker pull k8s.gcr.io/kube-apiserver:v1.16.2
+docker pull k8s.gcr.io/kube-controller-manager:v1.16.2
+docker pull k8s.gcr.io/kube-scheduler:v1.16.2
+docker pull k8s.gcr.io/kube-proxy:v1.16.2
+docker pull k8s.gcr.io/coredns:1.6.2
 echo "Pulled necessary images successfully!"
 
 printf "\nSet time and date to local rtc and set ntp to yes...\n"
