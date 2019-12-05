@@ -57,20 +57,12 @@ Once you have prepared the needed VMs, you can follow below steps:
 
    After joining make sure to run the following command twice (2) to reset your network routing...
 
-  ` systemctl restart network`
+   ` systemctl restart network`
 
-- To verify status, run below commands: 
+- To verify status of the new master node, run below commands: 
     1. `kubectl get nodes -o wide` to check that master node is UP and READY.
     2. `kubectl get pods --all-namespaces` to check that all pods are RUNNING.
     
-![Worker Setup](/images/worker_setup.png)
-- **Not yet done!** We have to run the `kubeadm join` command to make the worker node join the cluster.
-    - From the master node, execute `cat kubeadm-init.out` and copy the kubeadm join command from the last line of the output.
-    - Once the command is copied, execute the command to our worker node.
-- To verify status, run below commands **FROM Master Node**: 
-    1. `kubectl get nodes -o wide` to check that worker node is **UP** and **READY** and is indeed **JOINED** to the cluster.
-    2. `kubectl get pods --all-namespaces` to check that all pods are RUNNING including the new pods for the worker node.
-
 3. **Validating the Cluster**
 Create deployments and verify that they are running and have been assigned to the worker nodes of the cluster.
 ![Validation](/images/validation.png)
