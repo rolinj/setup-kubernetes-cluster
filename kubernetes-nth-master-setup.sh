@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Performing setup for kubernetes cluster..."
+echo "Performing setup for kubernetes additional master cluster..."
 printf "\nAdding details to host file...\n"
 # Save initial inputs to variables.
 ETH1_GATEWAY=$1
@@ -113,23 +113,14 @@ echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
 echo '1' > /proc/sys/net/ipv4/ip_forward
 echo "Iptables updated successfully!"
 
-printf "\nInitializing the kubernetes cluster...\n" 
-# Output will be saved on kubeadm-init.out file.
-kubeadm init --config=kubeadm-config.yaml --upload-certs --v=5 | tee kubeadm-init.out
 
-printf "\nCompleting cluster setup...\n"
-mkdir -p $HOME/.kube
-cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-chown $(id -u):$(id -g) $HOME/.kube/config
-echo "Cluster setup completed!"
+printf "\nComplete the setp up by joining the cluster using --control-plane tag like ff sample command...\n\n"
 
-printf "Applying calico settings...\n"
-kubectl apply -f calico.yaml
-echo "Applied calico settings successfully!"
+echo "kubeadm join <your_master_node>:6443 --token iooi7w.bb0oos74heefvnie \\"
+echo "--discovery-token-ca-cert-hash sha256:caeb991ed48810de91005f00f25d8e470dc60324dbe5bc44812beb22f8a93a21 \\"
+echo "--control-plane --certificate-key b4b4f6d276ffddc0c457795cc4539b747cd04d0e6c9929794b3d7b52612cc946"
 
-printf "\nReverting routing to default setting...\n"
-systemctl restart network
-systemctl restart network
-echo "Reverted routing settings to default successfully!"
+printf "\nAfter joing make sure to run the following command twice (2) to reset your network routing...\n"
+echo "   systemctl restart network"
 
 printf "\nKubernetes Cluster setup complete!\n"
