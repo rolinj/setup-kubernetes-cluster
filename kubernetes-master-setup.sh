@@ -139,3 +139,10 @@ systemctl restart network
 echo "Reverted routing settings to default successfully!"
 
 printf "\nKubernetes Cluster setup complete!\n"
+
+printf "\nEnable bash and kubectl completion\n"
+yum install bash-completion
+source /usr/share/bash-completion/bash_completion
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+kubectl completion bash >/etc/bash_completion.d/kubectl
+printf "\nAuto completion setup complete!\n"
